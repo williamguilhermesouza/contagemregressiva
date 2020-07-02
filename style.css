@@ -98,3 +98,21 @@ p, h2 {
     justify-content: center;
     margin-bottom: 15px;
 }
+
+.time-inputs input {
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+#get-count-btn {
+    width: 150px;
+    height: 50px;
+    margin-left: 15px;
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18pt;
+    color: white;
+    border-radius: 5px;
+    background: rgba(0, 180, 0, .5);
+}
+
