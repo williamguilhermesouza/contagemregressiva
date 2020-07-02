@@ -37,7 +37,8 @@ function countOrTimer(time) {
 }
 
 function validateOrZero(el) {
-    if (0 <= el.value || el.value >= 99) {
+    console.log(el.value);
+    if ((0 < el.value || el.value > 99) && (Number.isInteger(el.value)) ) {
         alert("Valor Inválido!!!");
         el.value = 0;
     }
