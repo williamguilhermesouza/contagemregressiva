@@ -6,9 +6,9 @@ function countOrTimer(time) {
         htmlContent = `
             <div class="time">
                 <div class="time-inputs">
-                    <input type="number" id="min-input" placeholder="min"/><span>:</span>
-                    <input type="number" id="s-input" placeholder="s" /><span>:</span>
-                    <input type="number" id="ms-input" placeholder="ms" />
+                    <input type="number" id="min-input" placeholder="min" min="0" max="59" step="1" onblur="validateOrZero(this)"/><span>:</span>
+                    <input type="number" id="s-input" placeholder="s" min="0" max="59" step="1" onblur="validateOrZero(this)" /><span>:</span>
+                    <input type="number" id="ms-input" placeholder="ms" min="0" max="99" step="1" onblur="validateOrZero(this)" />
                 </div>
                 <button id="get-count-btn" onclick="getCount()">Contagem</button>
                 <p><span id="min">00</span><span>:</span><span id="s">00</span><span>:</span><span id="ms">00</span></p>
@@ -35,6 +35,14 @@ function countOrTimer(time) {
 
     return htmlContent;
 }
+
+function validateOrZero(el) {
+    if (0 <= el.value || el.value >= 99) {
+        alert("Valor Inválido!!!");
+        el.value = 0;
+    }
+}
+
 
 function getCount() {
     let min = document.getElementById("min");
